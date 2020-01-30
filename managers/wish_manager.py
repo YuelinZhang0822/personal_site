@@ -1,6 +1,7 @@
 import logging
 from personal_site.app import db
 from personal_site.models.wish import Wish
+from personal_site.models.wish import WishSchema
 from personal_site.managers.base_manager import BaseManager
 
 logger = logging.getLogger(__name__)
@@ -8,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class WishManager(BaseManager):
     def __init__(self):
-        super(WishManager, self).__init__(Wish)
+        super(WishManager, self).__init__(Wish, WishSchema)
 
     def check(self, title, status, **kwargs):
         try:

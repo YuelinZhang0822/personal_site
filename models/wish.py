@@ -1,4 +1,12 @@
 from personal_site.app import db
+from marshmallow import Schema, fields
+
+class WishSchema(Schema):
+    title = fields.Str()
+    description = fields.Str()
+    status = fields.Str()
+    created = fields.DateTime()
+    updated = fields.DateTime()
 
 
 class Wish(db.Model):
@@ -14,4 +22,10 @@ class Wish(db.Model):
         self.title=title
         self.description=description
         self.status=status
+
+    def to_dict(self):
+        return WishSchema().dump(self)
+
+    def to_json(self):
+        return WishSchema().dumps(self)
 
