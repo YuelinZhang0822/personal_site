@@ -1,4 +1,5 @@
 from builtins import object
+from personal_site.app import db
 
 
 class BaseManager(object):
@@ -21,6 +22,16 @@ class BaseManager(object):
             obj_value.update(kwargs)
             self.update_existing(id, **obj_value)
 
+    def delete(self, id):
+        """
+        Dangerous! Need to add access control
+        """
+        obj = self.get_one(id)
+        if not obj:
+            raise Exception("{} object {} doesn't exist!".format(self.model.__name__, id))
+        db.session.delete(obj)
+        db.session.commit()
+
     def check(self, **kwargs):
         return True
 
@@ -37,3 +48,6 @@ class BaseManager(object):
         if not ids:
             return []
         return self.model.query.filter(self.model.id.in_(ids)).all()
+
+    def get_all(self):
+        return self.model.query.all()

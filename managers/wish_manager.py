@@ -35,4 +35,5 @@ class WishManager(BaseManager):
         db.session.commit()
         return existing_wish
 
+
 wish_manager = WishManager()
