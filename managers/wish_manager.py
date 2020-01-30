@@ -27,4 +27,12 @@ class WishManager(BaseManager):
         db.session.commit()
         return new_wish
 
+    def update_existing(self, id, title, description, status, **kwargs):
+        existing_wish = self.get_one(id)
+        existing_wish.title = title
+        existing_wish.description = description
+        existing_wish.status = status
+        db.session.commit()
+        return existing_wish
+
 wish_manager = WishManager()

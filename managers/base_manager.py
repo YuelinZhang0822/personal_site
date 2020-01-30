@@ -16,7 +16,10 @@ class BaseManager(object):
         if not obj:
             self.add_one(**kwargs)
         else:
-            self.update_existing(id, **kwargs)
+            # TODO: It's risky here. Can't make sure every model class has `to_dict()`
+            obj_value = obj.to_dict()
+            obj_value.update(kwargs)
+            self.update_existing(id, **obj_value)
 
     def check(self, **kwargs):
         return True
