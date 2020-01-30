@@ -5,6 +5,7 @@
             <th class="active">Id</th>
             <th class="active">Title</th>
             <th class="active">Description</th>
+            <th class="active">Status</th>
         </thead>
         <tbody>
             {% for wish in wishes %}
@@ -12,6 +13,7 @@
                     <td>{{ wish.id }}</td>
                     <td>{{ wish.title }}</td>
                     <td>{{ wish.description }}</td>
+                    <td>{{ wish.status }}</td>
                 </tr>
             {% endfor %}
 

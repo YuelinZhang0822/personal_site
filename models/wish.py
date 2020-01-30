@@ -1,10 +1,11 @@
-from personal_site.app import db
+from personal_site import db
 from marshmallow import Schema, fields
 
 class WishSchema(Schema):
     """
     Fields to deserialize/show/update manually
     """
+    id = fields.Int()
     title = fields.Str()
     description = fields.Str()
     status = fields.Str()

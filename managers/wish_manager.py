@@ -1,5 +1,5 @@
 import logging
-from personal_site.app import db
+from personal_site import db
 from personal_site.models.wish import Wish
 from personal_site.models.wish import WishSchema
 from personal_site.managers.base_manager import BaseManager

@@ -1,5 +1,5 @@
 from builtins import object
-from personal_site.app import db
+from personal_site import db
 
 
 class BaseManager(object):
@@ -51,3 +51,9 @@ class BaseManager(object):
 
     def get_all(self):
         return self.model.query.all()
+
+    def many_to_dict(self, objects):
+        return self.schema(many=True).dump(objects)
+
+    def many_to_json(self, objects):
+        self.schema(many=True).dumps(objects)
