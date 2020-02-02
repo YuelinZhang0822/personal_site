@@ -1,4 +1,4 @@
-from personal_site import db
+from app import db
 from marshmallow import Schema, fields
 
 class WishSchema(Schema):

@@ -1,8 +1,8 @@
 import logging
-from personal_site import db
-from personal_site.models.wish import Wish
-from personal_site.models.wish import WishSchema
-from personal_site.managers.base_manager import BaseManager
+from app import db
+from app.models.wish import Wish
+from app.models.wish import WishSchema
+from app.managers.base_manager import BaseManager
 
 logger = logging.getLogger(__name__)
 

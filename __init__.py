@@ -7,18 +7,18 @@ import sys
 import os
 
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/devdb'
+site = Flask(__name__)
+site.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+site.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/devdb'
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-bootstrap = Bootstrap(app)
+db = SQLAlchemy(site)
+migrate = Migrate(site, db)
+bootstrap = Bootstrap(site)
 
-root_path = app.root_path
+root_path = site.root_path
 parent_path = '/'.join(root_path.split('/')[:-1]) + '/'
 sys.path.insert(0, parent_path)
 os.environ['PYTHONPATH']=parent_path
 
-import personal_site.models
-import personal_site.views
+import app.models
+import app.views

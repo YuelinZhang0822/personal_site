@@ -1,5 +1,5 @@
 from builtins import object
-from personal_site import db
+from app import db
 
 
 class BaseManager(object):
