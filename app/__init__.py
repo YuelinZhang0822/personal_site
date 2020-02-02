@@ -22,6 +22,3 @@ os.environ['PYTHONPATH']=parent_path
 
 import app.models
 import app.views
-
-if __name__ == '__main__':
-    site.run()
