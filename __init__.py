@@ -16,8 +16,10 @@ bootstrap = Bootstrap(app)
 import logging
 logger = logging.getLogger(__name__)
 import os
+import sys
 print(os.environ['PYTHONPATH'])
-logger.info(os.environ['PYTHONPATH'])
+logger.info("pythonpath: " + os.environ['PYTHONPATH'])
+logger.info("sys path: " + sys.path)
 
 import personal_site.models
 import personal_site.views
