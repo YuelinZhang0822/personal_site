@@ -13,5 +13,11 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bootstrap = Bootstrap(app)
 
+import logging
+logger = logging.getLogger(__name__)
+import os
+print(os.environ['PYTHONPATH'])
+logger.info(os.environ['PYTHONPATH'])
+
 import personal_site.models
 import personal_site.views
