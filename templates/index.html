@@ -1,10 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
-   <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <div class="container-fluid">
+        <div class="jumbotron p-4 p-md-5">
+            <div class="col-md-12 px-0">
+                <h1 class="display-4">Hello！你好!</h1>
+                <p class="lead">This is Yuelin's personal websit. 这是玥琳的个人网站。</p>
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="/wishes" role="button">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="container w-75">
+        <!--Bootstrap carousel: https://getbootstrap.com/docs/4.4/components/carousel/-->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ol>
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../static/images/seattle.jpg" class="d-block w-100" alt="Fun Fact #1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fun Fact #1</h5>
+                    <p>Seattle is Yuelin's dream city.</p>
+                    <p>西雅图是玥琳心中的白月光.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/images/sf2.jpg" class="d-block w-100" alt="Fun Fact #2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fun Fact #2</h5>
+                    <p>But when Yuelin stays in Seattle, she always wanna go back to SF.</p>
+                    <p>但当玥琳在西雅图暂住的时候，她总想赶紧回到SF去.</p>
+                    <p>What can I say? The grass is always greener on the other side.</p>
+                    <p>我还能说什么，她总是吃着碗里的，想着锅里的。</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/images/philz2.jpg" class="d-block w-100" alt="Fun Fact #3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fun Fact #3</h5>
+                    <p>Yuelin's a caffeine addict. And she likes Philz coffee the most.</p>
+                    <p>玥琳咖啡上瘾，她最喜欢的咖啡品牌是Philz。</p>
+                </div>
+            </div>
+          </div>
+                            <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+        </div>
     </div>
 {% endblock %}
