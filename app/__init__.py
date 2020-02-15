@@ -9,7 +9,11 @@ import os
 
 site = Flask(__name__)
 site.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-site.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/devdb'
+
+if os.environ.get('FLASK_ENV') == 'development':
+    site.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/devdb'
+else:
+    site.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy(site)
 migrate = Migrate(site, db)
