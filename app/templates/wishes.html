@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <table class="table table-hover">
+    <table class="table table-hover" id="wishes">
         <thead>
             <th class="active">Id</th>
             <th class="active">Title</th>
@@ -10,7 +10,9 @@
         </thead>
         <tbody>
             {% for wish in wishes %}
-            <tr class="info">
+            <!--html custom tags need "data" prefix:-->
+            <!--http://html5doctor.com/html5-custom-data-attributes/-->
+            <tr class="info" data-wish-id={{wish.id}} data-wish-url="wish?id={{wish.id}}">
                     <td>{{ wish.id }}</td>
                     <td>{{ wish.title }}</td>
                     <td>{{ wish.description }}</td>
