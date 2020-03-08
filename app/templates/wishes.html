@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="image-selector" accept=".png, .jpg">
+        <label class="custom-file-label" for="image-selector" aria-describedby="image-selector-addon" id="selected-image-label">Choose Image</label>
+      </div>
+      <div class="input-group-append">
+        <span class="input-group-text" id="image-selector-addon">Upload</span>
+      </div>
+    </div>
+
     <table class="table table-hover" id="wishes">
         <thead>
             <th class="active">Id</th>

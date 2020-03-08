@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     $("#wishes tbody tr").click(function() {
-        var self = $(this);
-        var wish_id = parseInt(self.attr('data-wish-id'));
+        const self = $(this);
+        const wish_id = parseInt(self.attr('data-wish-id'));
         window.location = "/wish?id=3"
         // $.ajax({
         //     url: '/wish',
@@ -24,5 +24,12 @@ $(document).ready(function() {
     //     "click": function() { alert( "clicked!" ); },
     //     "mouseover": function() { console.log( "hovered!" ); }
     // });
+
+    $("#image-selector").change(function () {
+        const file_node = $("#image-selector");
+        const file_path = file_node.val();
+        const file_name = file_path.replace("C:\\fakepath\\", "");
+        $("#selected-image-label").text(file_name)
+    });
 
 });
