@@ -9,7 +9,7 @@ class ImageSchema(Schema):
     title = fields.Str()
 
 
-class Wish(db.Model):
+class Image(db.Model):
     __tablename__ = 'image'
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.LargeBinary, nullable=False)
