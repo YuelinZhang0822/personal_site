@@ -17,7 +17,7 @@ class Wish(db.Model):
 
     def __init__(self, data, text=''):
         self.data = data
-        self.text = txt
+        self.text = text
 
     def to_dict(self):
         return ImageSchema().dump(self)
